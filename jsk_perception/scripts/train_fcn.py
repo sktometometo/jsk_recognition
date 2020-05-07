@@ -251,20 +251,20 @@ class TrainFCN(object):
         params['max_epoch'] = self.max_epoch
         params['lr'] = self.lr
         params['weight_decay'] = self.weight_decay
-        self.trainer.extend(
-            fcn.extensions.ParamsReport(params, file_name='params.yaml'))
+        #self.trainer.extend(
+        #    fcn.extensions.ParamsReport(params, file_name='params.yaml'))
 
         # Dump param for fcn_object_segmentation.py
         model_name = dict()
         model_name['model_name'] = self.model_name
-        self.trainer.extend(
-            fcn.extensions.ParamsReport(
-                model_name, file_name='model_name.yaml'))
+        #self.trainer.extend(
+        #    fcn.extensions.ParamsReport(
+        #        model_name, file_name='model_name.yaml'))
         target_names = dict()
         target_names['target_names'] = self.train_dataset.class_names
-        self.trainer.extend(
-            fcn.extensions.ParamsReport(
-                target_names, file_name='target_names.yaml'))
+        #self.trainer.extend(
+        #    fcn.extensions.ParamsReport(
+        #        target_names, file_name='target_names.yaml'))
 
 
 if __name__ == '__main__':
