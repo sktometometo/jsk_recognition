@@ -35,6 +35,8 @@ add_message_files(
   Object.msg
   ObjectArray.msg
   PanoramaCameraInfo.msg
+  PanoramaObject.msg
+  PanoramaObjectArray.msg
   ParallelEdgeArray.msg
   ParallelEdge.msg
   PlotData.msg
