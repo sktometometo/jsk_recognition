@@ -34,7 +34,7 @@ add_message_files(
   ModelCoefficientsArray.msg
   Object.msg
   ObjectArray.msg
-  PanoramaCameraInfo.msg
+  PanoramaImageInfo.msg
   PanoramaObject.msg
   PanoramaObjectArray.msg
   ParallelEdgeArray.msg
