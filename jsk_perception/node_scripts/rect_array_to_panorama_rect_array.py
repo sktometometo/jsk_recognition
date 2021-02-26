@@ -16,8 +16,8 @@ def transformPanoramaPoint(x,
                            theta_max,
                            phi_min,
                            phi_max):
-    phi = (phi_max - phi_min)/2.0 + 1.0 * (phi_max - phi_min) * \
-        (x - (image_width/2.0)) / image_width
+    phi = (phi_max - phi_min) / 2.0 + \
+            1.0 * (phi_max - phi_min) * (x - image_width/2.0) / image_width
     theta = theta_min + 1.0 * (theta_max - theta_min) * y / image_height
     return (theta, phi)
 
@@ -26,7 +26,7 @@ class RectArrayToPanoramaRectArray(object):
 
     def __init__(self):
 
-        msg_panorama_info = rospy.wait_ford_message(
+        msg_panorama_info = rospy.wait_for_message(
             '~input_panorama_info', PanoramaInfo, 10)
         msg_panorama_image = rospy.wait_for_message(
             '~input_panorama_image', Image, 10)
@@ -42,7 +42,7 @@ class RectArrayToPanoramaRectArray(object):
         self._pub = rospy.Publisher(
             '~output', PanoramaRectArray, queue_size=10)
         # Subscribers
-        self._subrects = message_filters.Subscriber(
+        self._sub = rospy.Subscriber(
             '~input', RectArray, self._cb)
 
         rospy.loginfo('initialization has finished.')
