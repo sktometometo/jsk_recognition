@@ -1,4 +1,4 @@
-# rect_array_to_image_marker.py
+# rect_array_to_panorama_rect_array.py
 
 Convert `jsk_recognition_msgs/RectArray` to `jsk_recognition_msgs/PanoramaRectArray`.
 
