@@ -64,7 +64,7 @@ class PanoramaRectArrayToBoundingBoxArray(object):
 
             theta_center = panorama_rect.theta + panorama_rect.height / 2.0
             phi_center = panorama_rect.phi + panorama_rect.height / 2.0
-            distance = 2.0 * self._dimensions[label_name][2] * math.tan( panorama_rect.height / 2.0 )
+            distance = (self._dimensions[label_name][2] / 2.0) / math.tan( panorama_rect.height / 2.0 )
 
             p = PointStamped()
             (p.point.x, p.point.y, p.point.z) = calcPoint(theta_center,phi_center,distance)

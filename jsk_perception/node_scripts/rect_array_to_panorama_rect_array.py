@@ -17,8 +17,8 @@ def transformPanoramaPoint(x,
                            theta_max,
                            phi_min,
                            phi_max):
-    phi = (phi_max + phi_min) / 2.0 + \
-            1.0 * (phi_max - phi_min) * (x - (image_width/2.0)) / image_width
+    phi = phi_max + \
+            1.0 * (phi_min - phi_max) * x / image_width
     theta = theta_min + 1.0 * (theta_max - theta_min) * y / image_height
     return (theta, phi)
 
