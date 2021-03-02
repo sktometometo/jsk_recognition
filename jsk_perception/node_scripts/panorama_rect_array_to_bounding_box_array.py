@@ -53,7 +53,7 @@ class PanoramaRectArrayToBoundingBoxArray(object):
 
         msg_pub = BoundingBoxArray()
         msg_pub.header.frame_id = self._frame_fixed
-        msg_pub.header.stamp = rospy.Time.now()
+        msg_pub.header.stamp = msg_class.header.stamp
 
         for label, label_name, panorama_rect in zip(msg_class.labels, msg_class.label_names, msg_panorama_rects.panorama_rects):
 
