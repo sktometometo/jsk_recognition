@@ -95,7 +95,7 @@ class RectArrayInPanoramaToBoundingBoxArray(object):
             msg_class,
             msg_rects):
 
-        rospy.loginfo('callback called')
+        rospy.logdebug('callback called')
 
         time_current = msg_rects.header.stamp
 
